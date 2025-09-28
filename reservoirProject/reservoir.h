@@ -2,24 +2,26 @@
 
 class Reservoir
 {
-	char* name;
+	char* name = nullptr;
 	double width;
 	double length;
 	double depth;
 public:
 	Reservoir();
-	Reservoir(char* n,double w,double l,double d);
+	Reservoir(const char* n,double w,double l,double d);
 	~Reservoir();
+	void Init();
+	void Print();
 	double Capacity() const;
 	double Square() const;
-	bool Type(const char* type);
+	bool Test(const char* type);
 	bool TestSquare(Reservoir& b);
 	void Copy(const Reservoir& b);
-	void SetName(char* n);
+	void SetName(const char* n);
 	void SetWidth(double w);
 	void SetLength(double l);
 	void SetDepth(double d);
-	char GetName();
+	const char* GetName();
 	double GetWidth();
 	double GetLenth();
 	double GetDepth();
